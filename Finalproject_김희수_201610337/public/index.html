@@ -1,0 +1,62 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>옷 추천</title>
+    <link rel="stylesheet" type="text/css" href="style.css?v=1">
+</head>
+<body>
+    <nav class="nav-bar">
+        <img src="./clothes.jpg" alt="로고" class="nav-logo">
+        <h2 class="nav-title">뭐입지?</h2>
+        <div class="nav-clothes">
+            <button id="usage-button" class="nav-clothes-button">사용법</button>
+        </div>
+    </nav>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="./clothes.jpg" alt="KakaoTalk" class="chat-header-logo">
+            <h2 class="chat-header-title">옷 추천</h2>
+        </div>
+        <div id="chat-content" class="chat-bubble">알림: 추천답변을 불러오는데 다소 시간이 걸릴 수 있습니다.</div>
+        <div id="chat-content" class="chat-content">
+
+            <div id="answer-container"></div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="question-input" placeholder="사용법 예시: 나는 남자고 지금은 겨울인데 출근할때 입을 옷 추천해줘" class="chat-input-box" onkeypress="if( event.keyCode == 13 ){getAnswer();}">
+            <button onclick="getAnswer()" class="chat-send-button">전송</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDtRN788CDHdkGfJHPi3i3g7_g8_vuSatc",
+          authDomain: "ai-clothes-search.firebaseapp.com",
+          projectId: "ai-clothes-search",
+          storageBucket: "ai-clothes-search.appspot.com",
+          messagingSenderId: "979575209292",
+          appId: "1:979575209292:web:f7e1a3ca8ea7e415f623e9",
+          measurementId: "G-6R8DQW6LP9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
